@@ -1,18 +1,31 @@
-.container_wrapper {
+.popover {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  list-style: none;
+  gap: 1rem;
   flex-direction: column;
   background-color: #fff;
-  box-shadow: 0 0 0.5px rgba(80, 90, 120, 0.05);
+  box-shadow: 0 0 1px rgba(80, 90, 120, 0.05);
   border-radius: 5px;
+  padding: 24px;
+}
+
+.li {
+  list-style: none;
 }
 
 .container {
   position: absolute;
+  top: 80px;
+  border-radius: 5px;
+}
+
+.arrow {
+  position: absolute;
+  top: 70px;
+  width: 24px;
+  height: 24px;
   background-color: #fff;
-  height: 300px;
-  width: 600px;
   border-radius: 5px;
 }

@@ -1,0 +1,7 @@
+.p {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  font-size: 0.8em;
+  letter-spacing: 0.1rem;
+}

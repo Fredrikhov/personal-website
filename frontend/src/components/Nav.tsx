@@ -9,26 +9,31 @@ export const Nav = () => {
   const [isHovered, setIsHovered] = useState(false);
   const routes = [
     { label: "Projects", path: "/" },
-    { label: "Contact", path: "/contact" },
+    {
+      label: "Contact",
+      path: "/contact",
+      href: "mailto:fredrik@hovweb.org",
+    },
   ];
 
   const handleOnMouseEnter = () => {
-    setIsHovered(true);
+    /**
+     * Find the minimum value between the device's screen width and the width of the browser window's viewport
+     */
+    if (Math.min(screen.width, window.innerWidth) > 650) {
+      setIsHovered(true);
+    }
   };
 
   const handleOnClickMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const handleOnMouseLeave = () => {
-    setIsHovered(false);
-  };
-
   return (
     <nav className={navStyle.nav}>
       <div className={navStyle.mobile}>
         <a className={classNames(navStyle.a, navStyle.a_logo)} href="#">
-          HowWeb
+          HovWeb
         </a>
         <GiHamburgerMenu
           className={navStyle.mobile_icon}
@@ -46,8 +51,8 @@ export const Nav = () => {
               <li
                 className={navStyle.li}
                 key={route.path}
+                id={route.label}
                 onMouseEnter={handleOnMouseEnter}
-                onMouseLeave={handleOnMouseLeave}
               >
                 <a className={navStyle.a} href="#">
                   {route.label}
@@ -57,7 +62,7 @@ export const Nav = () => {
           } else {
             return (
               <li className={navStyle.li} key={route.path}>
-                <a className={navStyle.a} href="#">
+                <a className={navStyle.a} href={route.href}>
                   {route.label}
                 </a>
               </li>
@@ -65,7 +70,7 @@ export const Nav = () => {
           }
         })}
       </ul>
-      {isHovered && <ShowProjects />}
+      {isHovered && <ShowProjects props={setIsHovered} />}
     </nav>
   );
 };

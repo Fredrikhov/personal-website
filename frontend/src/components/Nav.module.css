@@ -40,7 +40,6 @@
   .nav {
     display: flex;
     padding: 24px 48px;
-    border: 1px solid red;
   }
 
   .nav_ul {
