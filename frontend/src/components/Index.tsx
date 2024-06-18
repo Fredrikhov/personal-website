@@ -4,6 +4,7 @@ export const Index = () => {
     <div className={indexStyle.wrapper}>
       <figure className={indexStyle.figure_img}>
         <img className={indexStyle.img} src="/fredrik_nilsen.jpeg" />
+        <div className={indexStyle.colors} />
       </figure>
     </div>
   );
