@@ -6,6 +6,8 @@
   color: black;
   text-decoration: none;
   text-transform: uppercase;
+}
+.a:last-child {
   padding: 0.5rem;
 }
 

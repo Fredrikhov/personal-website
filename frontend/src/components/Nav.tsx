@@ -1,17 +1,22 @@
-import { GiHamburgerMenu } from "react-icons/gi";
 import navStyle from "./Nav.module.css";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 import classNames from "classnames";
 import { ShowProjects } from "./ShowProjects";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 export const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const routes = [
+    { label: <FaGithub />, href: "https://github.com/Fredrikhov" },
+    {
+      label: <FaLinkedinIn />,
+      href: "https://www.linkedin.com/in/fredrik-hov-nilsen-5a271414a/",
+    },
     { label: "Projects", path: "/" },
     {
       label: "Contact",
-      path: "/contact",
       href: "mailto:fredrik@hovweb.org",
     },
   ];
@@ -45,12 +50,12 @@ export const Nav = () => {
           [navStyle.is_open]: isOpen,
         })}
       >
-        {routes.map((route) => {
+        {routes.map((route, index) => {
           if (route.label === "Projects") {
             return (
               <li
                 className={navStyle.li}
-                key={route.path}
+                key={index}
                 id={route.label}
                 onMouseEnter={handleOnMouseEnter}
               >
@@ -61,7 +66,7 @@ export const Nav = () => {
             );
           } else {
             return (
-              <li className={navStyle.li} key={route.path}>
+              <li className={navStyle.li} key={index}>
                 <a className={navStyle.a} href={route.href}>
                   {route.label}
                 </a>
