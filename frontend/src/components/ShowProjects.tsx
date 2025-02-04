@@ -58,7 +58,7 @@ export const ShowProjects = ({ props }: ShowProjectsProps) => {
         onMouseLeave={handleOnMouseLeave}
       >
         <div className={showProjectsStyle.popover} id="popover">
-          <h1>Github Projects</h1>
+          <h1 className={showProjectsStyle.h1}>Github Projects</h1>
         </div>
       </div>
     </>

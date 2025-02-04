@@ -3,18 +3,15 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 import classNames from "classnames";
 import { ShowProjects } from "./ShowProjects";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 export const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const routes = [
-    { label: <FaGithub />, href: "https://github.com/Fredrikhov" },
     {
-      label: <FaLinkedinIn />,
-      href: "https://www.linkedin.com/in/fredrik-hov-nilsen-5a271414a/",
+      label: "Projects",
+      href: "https://github.com/Fredrikhov?tab=repositories",
     },
-    { label: "Projects", path: "/" },
     {
       label: "Contact",
       href: "mailto:fredrik@hovweb.org",
@@ -25,7 +22,7 @@ export const Nav = () => {
     /**
      * Find the minimum value between the device's screen width and the width of the browser window's viewport
      */
-    if (Math.min(screen.width, window.innerWidth) > 650) {
+    if (Math.min(screen.width, window.innerWidth) > 590) {
       setIsHovered(true);
     }
   };
@@ -59,7 +56,7 @@ export const Nav = () => {
                 id={route.label}
                 onMouseEnter={handleOnMouseEnter}
               >
-                <a className={navStyle.a} href="#">
+                <a className={navStyle.a} href={route.href}>
                   {route.label}
                 </a>
               </li>

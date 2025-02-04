@@ -60,7 +60,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: grey;
     padding: 24px;
   }
   .container {
@@ -71,10 +70,10 @@
   }
   .nav_ul {
     display: none;
+    background-color: hsl(197, 10%, 87%);
   }
 
   .is_open {
-    background-color: grey;
     display: flex;
     justify-content: center;
     flex-direction: column;
